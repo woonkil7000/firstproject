@@ -1,0 +1,36 @@
+{{>layouts/header}}
+
+<table class="table">
+{{#article}}
+    <thead>
+    <tr>
+        <th scope="col">Title</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{title}}</td>
+        </tr>
+    </tbody>
+    <thead>
+    <tr>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{content}}</td>
+    </tr>
+    </tbody>
+{{/article}}
+</table>
+{{#msg}}
+    <div class="alert alert-warning" role="alert">{{msg}}</div>
+{{/msg}}
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Article Edit</a>
+<a href="/articles/{{article.id}}/delete"  class="btn btn-danger">Delete</a>
+<a href="/articles"    class="btn btn-primary">Article List</a>
+<a href="/articles/new"  class="btn btn-primary">New Article</a>
+
+
+{{>layouts/footer}}

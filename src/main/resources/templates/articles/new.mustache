@@ -1,0 +1,24 @@
+{{>layouts/header}}
+
+<!--form을 articles/create로 전송-->
+
+<form class="container" action="/articles/create" method="post">
+    <div class="mb-3">
+        <label class="form-label">제목</label>
+    <input type="text" class="form-control" name="title">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+    <textarea class="form-control" row="3" name="content"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">저 장</button>
+
+</form>
+{{#msg}}
+    <div class="alert alert-warning" role="alert">{{msg}}</div>
+{{/msg}}
+<br><br><br>
+<a href="/articles"  class="btn btn-primary">Article List</a>
+<a href="#"  class="btn btn-primary">....</a>
+
+{{>layouts/footer}}
