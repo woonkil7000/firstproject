@@ -7,9 +7,10 @@ import javax.persistence.*;
 //@Data
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor // 디폴트 생성자 추가!!
+@NoArgsConstructor // 파라미터가 없는(No Args) 기본 생성자. 디폴트 생성자 추가해준다!!
+// 없으면 error syntax: no default constructor for entity!!
 @ToString
-@Entity //DB가 해당 객체를 인식가능하게함. // 해당 클래스로 테이블을 생성한다.!!
+@Entity // 해당 클래스로 테이블을 생성한다.!! //DB가 해당 객체를 인식가능하게함.
 @Getter
 @Table(
         name="article"
@@ -18,7 +19,7 @@ public class Article {
 
     @Id //대표값. 유니크한 대표값
     //@GeneratedValue //1,2,3,4.....자동생성
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 ID값을 자동생성
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 ID값을 자동생성하도록~
     private Long id;
     
     @Column
@@ -26,6 +27,15 @@ public class Article {
 
     @Column
     private String content;
+
+    public void patch(Article articleEntity) {
+        if(articleEntity.title != null){
+            this.title = articleEntity.title;
+        }
+        if(articleEntity.content != null){
+            this.content = articleEntity.content;
+        }
+    }
 
 
     // @Geter로 대체

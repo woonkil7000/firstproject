@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public interface ArticleRepository extends CrudRepository<Article,Long> {
     @Override
-    ArrayList<Article> findAll();
+    ArrayList<Article> findAll(); // Iterable<T> Type Override
 
 
     //Article 엔티티와 대표값인 ID의 자료형을 인자로 전달.
