@@ -13,7 +13,7 @@ public class ArticleForm {
     private String title;
     private String content;
 
-    public Article toEntity() {
+    public Article toEntity() { // 엔티티로 변환.
         //return new Article(null,title,content);
         return new Article(id,title,content);
     }

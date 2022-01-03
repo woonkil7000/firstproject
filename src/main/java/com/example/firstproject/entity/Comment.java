@@ -33,6 +33,7 @@ public class Comment {
     private String body;
 
 
+    // Create
     public static Comment createComment(CommentDto dto, Article article) {
 
         // 예외 처리
@@ -50,5 +51,19 @@ public class Comment {
                 dto.getBody()
         );
 
+    }
+
+    // patch = update
+    public void patch(CommentDto dto) {
+        // 예외 발생
+        if(this.id != dto.getId()) // url 과 json data 의 id가 다를때
+            throw new IllegalArgumentException("댓글 수정 실패! 잘못된 id 가 입력되었습니다.");
+
+        // 객체를 갱신
+        if(dto.getNickname() != null)
+            this.nickname=dto.getNickname();
+        if(dto.getBody() != null)
+            this.body=dto.getBody();
+        // articleId는 FK. 수정 불가 값으로 패스.
     }
 }

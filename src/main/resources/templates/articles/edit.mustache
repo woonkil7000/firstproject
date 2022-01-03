@@ -8,14 +8,17 @@
     </div>
     <div class="mb-3">
         <label class="form-label">내용</label>
-        <textarea class="form-control" row="10"  name="content">{{content}}</textarea>
+        <textarea class="form-control" rows="15"  name="content">{{content}}</textarea>
     </div>
+    <div class="d-grid gap-2 d-md-block">
     <button type="submit" class="btn btn-primary">저 장</button>
+    </div>
 </form>
 {{/article}}
-
-<a href="/articles/{{article.id}}"  class="btn btn-primary">Back</a>
-<a href="/articles"    class="btn btn-primary">Article List</a>
-<a href="/articles/new"  class="btn btn-primary">New Article</a>
-
+<p> </p>
+<div class="d-grid gap-2 d-md-block">
+<a href="/articles/{{article.id}}"  class="btn btn-primary">돌아가기</a>
+<a href="/articles"    class="btn btn-primary">글 목록</a>
+<a href="/articles/new"  class="btn btn-primary">새글 작성</a>
+</div>
 {{>layouts/footer}}

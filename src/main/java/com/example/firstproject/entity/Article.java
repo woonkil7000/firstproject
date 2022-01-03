@@ -28,12 +28,15 @@ public class Article {
     @Column
     private String content;
 
-    public void patch(Article articleEntity) {
-        if(articleEntity.title != null){
-            this.title = articleEntity.title;
+    public void patch(Article article) {
+
+        // patch: null 이 아닌 필드만 저장.
+        if(article.title != null){
+            this.title = article.title;
         }
-        if(articleEntity.content != null){
-            this.content = articleEntity.content;
+
+        if(article.content != null){
+            this.content = article.content;
         }
     }
 
